@@ -29,12 +29,24 @@ class ContaBancaria:
         print("-----------------------------")
 
 
+def realizar_deposito(conta, valor):
+    conta.depositar(valor)
+
+
+def realizar_saque(conta, valor):
+    conta.sacar(valor)
+
+
+def exibir_extrato(conta):
+    conta.extrato()
+
+
 # Teste do sistema
 conta1 = ContaBancaria(1234, "João", 1000)
 
-conta1.extrato()  # Exibe informações iniciais da conta
+exibir_extrato(conta1)  # Exibe informações iniciais da conta
 
-conta1.depositar(500)  # Deposita R$500
-conta1.sacar(200)  # Sacar R$200
+realizar_deposito(conta1, 500)  # Deposita R$500
+realizar_saque(conta1, 200)  # Sacar R$200
 
-conta1.extrato()  # Exibe informações atualizadas da conta
+exibir_extrato(conta1)  # Exibe informações atualizadas da conta
